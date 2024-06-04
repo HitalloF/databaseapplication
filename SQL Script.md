@@ -1,4 +1,4 @@
-##Consultas SQL para Pedidos e Gastos
+## Consultas SQL para Pedidos e Gastos
 ### Cliente que Mais Fez Pedidos por Ano
 ```
 SELECT ano, cliente, num_pedidos
@@ -11,13 +11,13 @@ FROM (
   FROM tb_pedido pd
   JOIN tb_mesa ms ON pd.codigo_mesa = ms.codigo_mesa
   JOIN tb_cliente cl ON ms.id_cliente = cl.id_cliente
-  GROUP BY ano, cliente
+  GROUP BY ano, clientes
 ) AS ranked
 WHERE rn = 1;
 
 ``` 
 
-###Cliente que Mais Gastou em Todos os Anos
+### Cliente que Mais Gastou em Todos os Anos
 ```
 SELECT cliente, total_gasto
 FROM (
